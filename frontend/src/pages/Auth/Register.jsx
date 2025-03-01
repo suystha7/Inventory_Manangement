@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import AuthLayout from "../../components/layouts/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
-import { validateEmail } from "../../utils/helper";
+import { validateEmail, validatePassword } from "../../utils/helper";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import { API_PATHS } from "../../utils/apiPaths";
 import axiosInstance from "../../utils/axiosInstance";
@@ -33,7 +33,7 @@ const Register = () => {
       setError("Please enter a vaild email address");
       return;
     }
-    if (!password) {
+    if (!password || !validatePassword(password)) {
       setError("Please enter the password");
       return;
     }
@@ -103,7 +103,7 @@ const Register = () => {
                 value={password}
                 onChange={({ target }) => setPassword(target.value)}
                 label="Password"
-                placeholder="Min 8 characters"
+                placeholder="Min 8 characters, one uppercase, one number, one special character..."
                 type="password"
               />
             </div>

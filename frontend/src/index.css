@@ -5,7 +5,7 @@
 @theme {
   --font-display: "Poppins", "sans-serif";
   --breakpoint-3xl: 1920px;
-  --color-primary: #916aff;
+  --color-primary: #4084f4;
 }
 
 @layer base {
@@ -24,5 +24,5 @@
 }
 
 .btn-primary {
-  @apply w-full text-sm font-medium text-white bg-violet-500 shadow-lg shadow-purple-600/5  p-[10px] rounded-md my-1 hover:bg-purple-600/15 hover:text-purple-600;
+  @apply w-full text-sm font-medium text-white bg-blue-500 shadow-lg shadow-blue-600/5  p-[10px] rounded-md my-1 hover:bg-blue-600/15 hover:text-blue-600;
 }
