@@ -21,7 +21,13 @@ const Navbar = ({ activeMenu }) => {
       <h2 className="text-lg text-black font-medium">Expense Tracker</h2>
 
       {openSideMenu && (
-        <div className="fixed top-[62px] -ml-4 bg-white">
+        <div
+          className="fixed top-[62px] -ml-4 bg-white  transition-opacity duration-300 ease-in-out transform scale-95 opacity-0"
+          style={{
+            transform: openSideMenu ? "scale(1)" : "scale(0.95)",
+            opacity: openSideMenu ? 1 : 0,
+          }}
+        >
           <SideMenu activeMenu={activeMenu} />
         </div>
       )}

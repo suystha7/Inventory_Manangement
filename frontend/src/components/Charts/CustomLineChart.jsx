@@ -33,7 +33,7 @@ const CustomLineChart = ({ data }) => {
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data}>
           <defs>
-            <linearGradient id="incomeGradient" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="expenseGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#4084f4" stopOpacity={0.4} />
               <stop offset="95%" stopColor="#4084f4" stopOpacity={0} />
             </linearGradient>
@@ -51,8 +51,8 @@ const CustomLineChart = ({ data }) => {
           <Area
             type="monotone"
             dataKey="amount"
-            stroke="#875CF5"
-            fill="url(#incomeGradient)"
+            stroke="#4084f4"
+            fill="url(#expenseGradient)"
             strokeWidth={3}
             dot={{ r: 3, fill: "#ab8df8" }}
           />

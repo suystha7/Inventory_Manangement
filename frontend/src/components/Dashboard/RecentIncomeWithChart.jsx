@@ -4,7 +4,7 @@ import CustomPieChart from "../Charts/CustomPieChart";
 const RecentIncomeWithChart = ({ data, totalIncome }) => {
   const [chartData, setChartData] = useState([]);
 
-  const COLORS = ["#4084f4", "#FA2C37", "#FF6900", "#4F39F6"];
+  const COLORS = ["#4DABF7", "#FF6B6B", "#FF6900", "#B197FC"];
 
   const prepareChartData = () => {
     if (Array.isArray(data)) {

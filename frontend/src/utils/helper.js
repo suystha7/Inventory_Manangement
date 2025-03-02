@@ -56,8 +56,8 @@ export const prepareIncomeBarChartData = (data) => {
 
   const chartData = sortedData.map((item) => ({
     month: moment(item?.date).format("Do MMM"),
-    amount: item?.amount || 0, 
-    source: item?.source || "Unknown", 
+    amount: item?.amount ?? 0, 
+    source: item?.source || "", 
   }));
 
   return chartData;
@@ -74,7 +74,7 @@ export const prepareExpenseLineChartData = (data) => {
 
   const chartData = sortedData.map((item) => ({
     month: moment(item?.date).format("Do MMM"),
-    amount: item?.amount || 0, 
+    amount: item?.amount ?? 0, 
     category: item?.category || "Unknown", 
   }));
 
