@@ -72,17 +72,17 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <RecentTransactions
-            transaction={dashboardData?.recentTranscation}
-            onSeeMore={() => navigate("/expense")}
-          />
-
           <FinanceOverview
             totalBalance={dashboardData?.totalBalance || 0}
             totalIncome={dashboardData?.totalIncome || 0}
             totalExpense={dashboardData?.totalExpense || 0}
           />
 
+          <RecentTransactions
+            transaction={dashboardData?.recentTranscation}
+            onSeeMore={() => navigate("/expense")}
+          />
+          
           <ExpenseTranscations
             transaction={dashboardData?.last30DaysExpense?.transcation || 0}
             onSeeMore={() => navigate("/expense")}

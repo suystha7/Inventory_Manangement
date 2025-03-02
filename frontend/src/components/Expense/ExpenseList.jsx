@@ -3,11 +3,11 @@ import React from "react";
 import { LuDownload } from "react-icons/lu";
 import TransactionInfoCard from "../Cards/TransactionInfoCard";
 
-const IncomeList = ({ transaction, onDelete, onDownload }) => {
+const ExpenseList = ({ transaction, onDelete, onDownload }) => {
   return (
     <div className="card">
       <div className="flex items-center justify-between">
-        <h5 className=" text-lg">Income Sources</h5>
+        <h5 className=" text-lg">All Expenses</h5>
 
         <button className="card-btn" onClick={onDownload}>
           <LuDownload className="text-base" /> Download
@@ -16,23 +16,23 @@ const IncomeList = ({ transaction, onDelete, onDownload }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2">
         {Array.isArray(transaction) && transaction.length > 0 ? (
-          transaction.map((income) => (
+          transaction.map((expense) => (
             <TransactionInfoCard
-              key={income._id}
-              title={income.source}
-              icon={income.icon}
-              date={moment(income.date).format("Do MMM YYYY")}
-              amount={income.amount}
-              type="income"
-              onDelete={() => onDelete(income._id)}
+              key={expense._id}
+              title={expense.category}
+              icon={expense.icon}
+              date={moment(expense.date).format("Do MMM YYYY")}
+              amount={expense.amount}
+              type="expense"
+              onDelete={() => onDelete(expense._id)}
             />
           ))
         ) : (
-          <p>No income records found.</p>
+          <p>No expense records found.</p>
         )}
       </div>
     </div>
   );
 };
 
-export default IncomeList;
+export default ExpenseList;

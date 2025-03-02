@@ -45,15 +45,37 @@ export const prepareExpenseBarChartData = (data) => {
   }));
 };
 
-export const prepareIncomeBarChartData = (data = []) => {
+export const prepareIncomeBarChartData = (data) => {
+  if (!Array.isArray(data)) {
+    return [];
+  }
+
   const sortedData = [...data].sort(
     (a, b) => new Date(a.date) - new Date(b.date)
   );
 
   const chartData = sortedData.map((item) => ({
     month: moment(item?.date).format("Do MMM"),
-    amount: item?.amount,
-    source: item?.source,
+    amount: item?.amount || 0, 
+    source: item?.source || "Unknown", 
+  }));
+
+  return chartData;
+};
+
+export const prepareExpenseLineChartData = (data) => {
+  if (!Array.isArray(data)) {
+    return [];
+  }
+
+  const sortedData = [...data].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
+
+  const chartData = sortedData.map((item) => ({
+    month: moment(item?.date).format("Do MMM"),
+    amount: item?.amount || 0, 
+    category: item?.category || "Unknown", 
   }));
 
   return chartData;
