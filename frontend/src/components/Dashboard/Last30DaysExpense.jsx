@@ -17,7 +17,9 @@ const Last30DaysExpense = ({ data }) => {
         <h5 className="text-lg">Last 30 Days Expenses</h5>
       </div>
 
-      <CustomBarChart data={chartData} />
+      <div className="mt-20">
+        <CustomBarChart data={chartData} />
+      </div>
     </div>
   );
 };

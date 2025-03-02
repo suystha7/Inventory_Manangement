@@ -27,13 +27,15 @@ const RecentIncomeWithChart = ({ data, totalIncome }) => {
         <h5 className="text-lg">Last 60 Days Income</h5>
       </div>
 
-      <CustomPieChart
-        data={chartData}
-        label="Total Income"
-        totalAmount={`Rs.${totalIncome}`}
-        showTextAnchor
-        colors={COLORS}
-      />
+      <div className="mt-12">
+        <CustomPieChart
+          data={chartData}
+          label="Total Income"
+          totalAmount={`Rs.${totalIncome}`}
+          showTextAnchor
+          colors={COLORS}
+        />
+      </div>
     </div>
   );
 };

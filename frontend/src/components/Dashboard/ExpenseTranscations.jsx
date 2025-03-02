@@ -17,7 +17,7 @@ const ExpenseTranscations = ({ transaction, onSeeMore }) => {
       <div className="mt-6">
         {Array.isArray(transaction) &&
           transaction
-            .slice(0, 4)
+            .slice(0, 5)
             .map((expense) => (
               <TransactionInfoCard
                 key={expense._id}
